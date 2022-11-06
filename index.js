@@ -16,9 +16,12 @@ The function should:
 */
 
 
-function createMenuItem(/*Your code here*/){
+function createMenuItem(name, price, category){
   /*Your code here*/
+  const newMenuItem = {"name": name, "price": price, "category": category};
+  return newMenuItem;
 }
+console.log(createMenuItem('tacos', 8, 'Lunch'));
 
 
 
@@ -31,6 +34,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+console.log(createMenuItem('burgers', 5, 'pick-up'));
+console.log(createMenuItem('ribs', 10, 'dinner'));
+console.log(createMenuItem('waffles', 3, 'breakfast'));
 
 
 
@@ -51,8 +57,15 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(type) {
+    if(type === "teacher" || "student") {
+      return 13.5
+    } else {
+      return 16.2
+    }
+  }
 }
+console.log(burger.discount("teacher"));
 
 
 
@@ -72,7 +85,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+console.log(reviews[5].feedback);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -80,7 +93,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
-
+reviews[7]["feedback"] = "this place is chill with really cool people, great for getting work done on weekdays";
+console.log(reviews);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -95,9 +109,13 @@ Use the addReview function below to do the following:
 */
 
 
-function addReview(/*Your Code Here */){
+function addReview(array, name, rating, feedback){
   /*Your Code Here */
+  array.push({"name": name, "rating": rating, "feedback": feedback})
+  return array;
 }
+
+console.log(addReview(reviews, 'Billy', 2, 'Lame food'));
 
 
 
