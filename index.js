@@ -58,14 +58,14 @@ const burger = {
   price: 18, 
   category: "Lunch", 
   discount: function(type) {
-    if(type === "teacher" || "student") {
+    if(type === "teacher" || type === "student") {
       return 13.5
     } else {
       return 16.2
     }
   }
 }
-console.log(burger.discount("teacher"));
+console.log(burger.discount("public"));
 
 
 
@@ -111,8 +111,9 @@ Use the addReview function below to do the following:
 
 function addReview(array, name, rating, feedback){
   /*Your Code Here */
-  array.push({"name": name, "rating": rating, "feedback": feedback})
-  return array;
+  array.push({"name": name, "rating": rating, "feedback": feedback});
+  const addreviewArray = array
+  return addreviewArray;
 }
 
 console.log(addReview(reviews, 'Billy', 2, 'Lame food'));
@@ -153,10 +154,12 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
+function getLastReview(array) {
   /*Your code here*/
+  const lastreview = `${array[array.length-1].name} gave the restaurant a ${array[array.length-1].rating} star review, and their feedback was: ${array[array.length-1].feedback}`;
+  return lastreview
 } 
-
+console.log(getLastReview(reviews));
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
